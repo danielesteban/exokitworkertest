@@ -1,3 +1,6 @@
+console.log('Worker ready');
 self.addEventListener('message', ({ data }) => {
-  self.postMessage(data);
+  console.log('Received', data);
 });
+self.postMessage('from worker');
+

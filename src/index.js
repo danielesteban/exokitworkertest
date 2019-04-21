@@ -1,7 +1,9 @@
 import Worker from './test.worker';
 
+console.log('Main thread ready');
 const worker = new Worker();
 worker.onmessage = ({ data }) => {
-  console.log(data);
+  console.log('Received', data);
 };
-worker.postMessage({ test: 'echo' });
+worker.postMessage('from main thread');
+
